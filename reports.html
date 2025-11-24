@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>التقارير والأرصدة (مبدئي)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div>التقارير والأرصدة (نسخة أولى للتجربة)</div>
+    <div>
+      <button onclick="window.location.href='home.html'">الصفحة الرئيسية</button>
+      <button id="logout-btn">تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>التقارير والأرصدة</h1>
+    <p>هذه صفحة مبدئية لعرض الأذونات والأرصدة. لاحقاً سنطورها لحساب الأرصدة حسب المورد والمصنع والمصبغة.</p>
+
+    <section>
+      <h2>أذونات الخيط</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>التاريخ</th>
+            <th>رقم الإذن</th>
+            <th>المورد</th>
+            <th>المصنع</th>
+            <th>إجمالي الوزن</th>
+          </tr>
+        </thead>
+        <tbody id="rep-yarn-body"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>أذونات الخام</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>التاريخ</th>
+            <th>رقم الإذن</th>
+            <th>المصنع</th>
+            <th>المصبغة</th>
+            <th>إجمالي الوزن</th>
+          </tr>
+        </thead>
+        <tbody id="rep-grey-body"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script type="module" src="reports.js"></script>
+</body>
+</html>

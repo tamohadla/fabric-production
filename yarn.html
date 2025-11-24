@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>إدخالات الخيط</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div>إدخالات الخيط</div>
+    <div>
+      <button onclick="window.location.href='home.html'">الصفحة الرئيسية</button>
+      <button id="logout-btn">تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>إذن استلام خيط جديد</h1>
+
+    <form id="yarn-entry-form" class="grid-form">
+      <label>المورد (مورد الخيط)
+        <input type="text" id="ye-supplier" required />
+      </label>
+      <label>المستلم (مصنع الدائري)
+        <select id="ye-factory" required>
+          <option value="">اختر مصنع دائري...</option>
+        </select>
+      </label>
+      <label>تاريخ التوريد
+        <input type="date" id="ye-date" required />
+      </label>
+      <label>رقم إذن الاستلام
+        <input type="text" id="ye-receipt" required />
+      </label>
+      <label>حالة الإذن
+        <select id="ye-status">
+          <option value="open">مفتوح</option>
+          <option value="closed">مغلق</option>
+        </select>
+      </label>
+      <label>ملاحظات عامة
+        <input type="text" id="ye-notes" />
+      </label>
+    </form>
+
+    <h2>بنود الخيط</h2>
+    <table class="lines-table">
+      <thead>
+        <tr>
+          <th>نوع الخيط</th>
+          <th>الماركة</th>
+          <th>الكمية (كغ)</th>
+          <th>عدد الكراتين</th>
+          <th>سعر الكيلو</th>
+          <th>العملة</th>
+          <th>القيمة الإجمالية</th>
+          <th>حذف</th>
+        </tr>
+      </thead>
+      <tbody id="yarn-lines-body"></tbody>
+    </table>
+    <button id="add-yarn-line">إضافة بند خيط</button>
+
+    <div class="totals">
+      <span>إجمالي الوزن (كغ): <strong id="total-kg">0</strong></span>
+      <span>إجمالي الكراتين: <strong id="total-cartons">0</strong></span>
+      <span>إجمالي القيمة: <strong id="total-value">0</strong></span>
+    </div>
+
+    <button id="save-yarn-entry" class="primary">حفظ الإذن</button>
+
+    <hr />
+    <h2>آخر الأذونات المسجلة</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>التاريخ</th>
+          <th>رقم الإذن</th>
+          <th>المورد</th>
+          <th>المصنع</th>
+          <th>إجمالي الوزن</th>
+        </tr>
+      </thead>
+      <tbody id="recent-yarn-entries"></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="yarn.js"></script>
+</body>
+</html>

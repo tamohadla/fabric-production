@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحة التعريفات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div>التعريفات الأساسية</div>
+    <div>
+      <button onclick="window.location.href='home.html'">الصفحة الرئيسية</button>
+      <button id="logout-btn">تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>التعريفات</h1>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="yarn-types">تعريفات الخيط</button>
+      <button class="tab-button" data-tab="fabrics">تعريفات الخامات (القماش)</button>
+      <button class="tab-button" data-tab="circular">مصانع الدائري</button>
+      <button class="tab-button" data-tab="dyehouses">المصابغ</button>
+    </div>
+
+    <section id="yarn-types" class="tab active">
+      <h2>تعريفات الخيط</h2>
+      <form id="yarn-type-form" class="grid-form">
+        <label>اسم الخيط
+          <input type="text" id="yt-name" required />
+        </label>
+        <label>نوع الخيط (قطن / فسكوز / DTY ... )
+          <input type="text" id="yt-category" />
+        </label>
+        <label>نمرة الخيط (مثال: 30/1 , 150/144)
+          <input type="text" id="yt-count" />
+        </label>
+        <label>نسبة الهالك القياسية %
+          <input type="number" id="yt-waste" min="0" step="0.01" />
+        </label>
+        <label>ملاحظات
+          <input type="text" id="yt-notes" />
+        </label>
+        <button type="submit">حفظ الخيط</button>
+      </form>
+
+      <h3>قائمة الخيوط</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>الاسم</th>
+            <th>النوع</th>
+            <th>النمرة</th>
+            <th>الهالك %</th>
+            <th>ملاحظات</th>
+            <th>حذف</th>
+          </tr>
+        </thead>
+        <tbody id="yarn-types-table"></tbody>
+      </table>
+    </section>
+
+    <section id="fabrics" class="tab">
+      <h2>تعريفات الخامات (القماش)</h2>
+      <form id="fabric-form" class="grid-form">
+        <label>اسم الخامة
+          <input type="text" id="fb-name" required />
+        </label>
+        <label>عرض القماش (بوصة)
+          <input type="number" id="fb-width" min="0" step="0.1" />
+        </label>
+        <label>نعومة / جوج (اختياري)
+          <input type="text" id="fb-gauge" />
+        </label>
+        <label>أقصى هالك مسموح به %
+          <input type="number" id="fb-max-waste" min="0" step="0.01" />
+        </label>
+        <label>تركيبة الخامة (مثال: 96% قطن / 4% ليكرا)
+          <input type="text" id="fb-composition" />
+        </label>
+        <label>ملاحظات عامة
+          <input type="text" id="fb-notes" />
+        </label>
+        <button type="submit">حفظ الخامة</button>
+      </form>
+
+      <h3>قائمة الخامات</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>الاسم</th>
+            <th>العرض</th>
+            <th>الجوج</th>
+            <th>الهالك %</th>
+            <th>التركيبة</th>
+            <th>ملاحظات</th>
+            <th>حذف</th>
+          </tr>
+        </thead>
+        <tbody id="fabrics-table"></tbody>
+      </table>
+    </section>
+
+    <section id="circular" class="tab">
+      <h2>تعريف مصانع الدائري</h2>
+      <form id="circular-form" class="grid-form">
+        <label>اسم المصنع
+          <input type="text" id="cf-name" required />
+        </label>
+        <label>اسم المسؤول / تليفون
+          <input type="text" id="cf-contact" />
+        </label>
+        <label>ملاحظات
+          <input type="text" id="cf-notes" />
+        </label>
+        <button type="submit">حفظ المصنع</button>
+      </form>
+
+      <h3>قائمة مصانع الدائري</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>الاسم</th>
+            <th>الاتصال</th>
+            <th>ملاحظات</th>
+            <th>حذف</th>
+          </tr>
+        </thead>
+        <tbody id="circular-table"></tbody>
+      </table>
+    </section>
+
+    <section id="dyehouses" class="tab">
+      <h2>تعريف المصابغ</h2>
+      <form id="dyehouse-form" class="grid-form">
+        <label>اسم المصبغة
+          <input type="text" id="dh-name" required />
+        </label>
+        <label>اسم المسؤول / تليفون
+          <input type="text" id="dh-contact" />
+        </label>
+        <label>ملاحظات
+          <input type="text" id="dh-notes" />
+        </label>
+        <button type="submit">حفظ المصبغة</button>
+      </form>
+
+      <h3>قائمة المصابغ</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>الاسم</th>
+            <th>الاتصال</th>
+            <th>ملاحظات</th>
+            <th>حذف</th>
+          </tr>
+        </thead>
+        <tbody id="dyehouses-table"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script type="module" src="definitions.js"></script>
+</body>
+</html>
